@@ -465,6 +465,7 @@ export const CATEGORIES_DATA = [
 export const STORIES_DATA = [
   {
     id: "pulikali",
+    video: "/videos/pulikali.mp4",
     title: "Pulikali – The Roar of Swaraj Round",
     category: "Folk Art",
     duration: "75 seconds",
@@ -561,6 +562,7 @@ export const STORIES_DATA = [
   },
   {
     id: "pooram",
+    video: "/videos/thrissur-pooram.mp4",
     title: "Thrissur Pooram – The 36-Hour Melam Symphony",
     category: "Festival",
     duration: "90 seconds",
@@ -673,6 +675,7 @@ export const STORIES_DATA = [
   },
   {
     id: "architecture",
+    video: "/videos/vadakkumnathan.mp4",
     title: "Vadakkumnathan – Geometry Without Nails",
     category: "Heritage and Architecture",
     duration: "60 seconds",
