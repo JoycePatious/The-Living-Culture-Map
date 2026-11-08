@@ -137,8 +137,6 @@ VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
 
 ## 9. Demonstration Screenshots
 
-## 9. Demonstration Screenshots
-
 ### 9.1 Homepage
 ![RIVA Homepage](screenshots/homepage.png)
 
