@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RIVA — The Living Culture Map (Thrissur)</title>
+
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN with RIVA Design Tokens -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ivory: {
+                DEFAULT: '#FAF8F5',
+                silk: '#F5F0E8',
+                light: '#FCFBF9'
+              },
+              burgundy: {
+                DEFAULT: '#5A1827',
+                dark: '#3F101B',
+                light: '#7A2236',
+                deep: '#2D0A12'
+              },
+              gold: {
+                DEFAULT: '#B8973D',
+                light: '#D4B257',
+                dark: '#927329'
+              },
+              charcoal: {
+                DEFAULT: '#221E1F',
+                light: '#332D2F',
+                muted: '#524B4D'
+              }
+            },
+            fontFamily: {
+              serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+              sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#FAF8F5] text-[#221E1F] selection:bg-[#B8973D]/20 selection:text-[#5A1827] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

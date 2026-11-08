@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIVA — The Living Culture Map (Thrissur)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#FAF8F5',
+                        burgundy: {
+                            DEFAULT: '#5A1827',
+                            dark: '#3F101B',
+                            light: '#7A2236'
+                        },
+                        gold: {
+                            DEFAULT: '#B8973D',
+                            light: '#D4B257',
+                            dark: '#927329'
+                        },
+                        charcoal: '#221E1F'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(184, 151, 61, 0.4); }
+            70% { transform: scale(1); box-shadow: 0 0 0 14px rgba(184, 151, 61, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(184, 151, 61, 0); }
+        }
+        .animate-pulse-ring {
+            animation: pulse-ring 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        body {
+            background-color: #FAF8F5;
+            color: #221E1F;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-ivory text-charcoal selection:bg-gold/20 selection:text-burgundy">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-ivory/90 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center text-gold border border-gold/40 shadow-sm transition-transform duration-300 group-hover:scale-105">
+                    <i data-lucide="flame" class="w-5 h-5"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl font-bold tracking-wider text-burgundy">RIVA</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Living Culture Map</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center relative w-72">
+                <input type="text" placeholder="Search art, shrines, craft..." id="navSearchInput" oninput="liveSearch(this.value)" class="w-full bg-white border border-gold/30 rounded-full py-2 pl-10 pr-4 text-xs text-charcoal placeholder-charcoal/40 focus:outline-none focus:border-burgundy transition-all shadow-inner">
+                <i data-lucide="search" class="w-4 h-4 text-gold absolute left-3.5 top-2.5"></i>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-charcoal/80">
+                <a href="#map-section" class="hover:text-burgundy transition-colors">Interactive Map</a>
+                <a href="#magic-lens" class="hover:text-burgundy transition-colors">Magic Lens</a>
+                <a href="#discoveries" class="hover:text-burgundy transition-colors">Discoveries (15)</a>
+                <a href="#story-mode" class="hover:text-burgundy transition-colors">Story Mode</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#map-section" class="bg-burgundy hover:bg-burgundy-light text-ivory px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide uppercase transition-all duration-300 shadow-md">
+                    Explore Thrissur
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-gradient-to-b from-ivory via-white to-ivory">
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+            <div class="inline-flex items-center space-x-2 bg-burgundy/5 border border-burgundy/20 px-4 py-1.5 rounded-full mb-6">
+                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                <span class="text-xs uppercase tracking-widest font-semibold text-burgundy">Thrissur Cultural District • 15 Verified Entries</span>
+            </div>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-burgundy leading-[1.1] mb-6">
+                Where Tradition <br><span class="italic font-normal text-gold">Breathes.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-base md:text-lg text-charcoal/70 mb-10">
+                Uncovering the living pulse of Thrissur — from midnight temple drums and ancient bell-metal smiths to secret archival heritage trails.
+            </p>
+            <div class="max-w-xl mx-auto bg-white p-3 rounded-2xl shadow-xl shadow-burgundy/5 border border-gold/30 mb-8 flex flex-col sm:flex-row gap-2">
+                <div class="flex-1 flex items-center px-3 py-2 bg-ivory rounded-xl border border-gold/20">
+                    <i data-lucide="compass" class="w-5 h-5 text-gold mr-3"></i>
+                    <input type="text" id="heroSearch" placeholder="Search Pulikali, Vadakkumnathan, Pooram..." class="w-full bg-transparent text-sm text-charcoal placeholder-charcoal/40 focus:outline-none">
+                </div>
+                <button onclick="triggerSearch()" class="bg-burgundy hover:bg-burgundy-light text-ivory font-semibold px-6 py-3 rounded-xl text-sm transition-all shadow-sm">
+                    Search Archive
+                </button>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs">
+                <span class="text-charcoal/50 font-medium mr-2">Filters:</span>
+                <button onclick="filterCategory('all')" class="px-4 py-2 rounded-full bg-burgundy text-ivory font-medium transition-all shadow-sm">All</button>
+                <button onclick="filterCategory('Heritage Space')" class="px-4 py-2 rounded-full bg-white hover:bg-burgundy/5 border border-gold/30 text-charcoal font-medium">Heritage Spaces</button>
+                <button onclick="filterCategory('Festival')" class="px-4 py-2 rounded-full bg-white hover:bg-burgundy/5 border border-gold/30 text-charcoal font-medium">Festivals</button>
+                <button onclick="filterCategory('Art Form')" class="px-4 py-2 rounded-full bg-white hover:bg-burgundy/5 border border-gold/30 text-charcoal font-medium">Art Forms</button>
+                <button onclick="filterCategory('Craft')" class="px-4 py-2 rounded-full bg-white hover:bg-burgundy/5 border border-gold/30 text-charcoal font-medium">Crafts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Magic Lens Interactive Feature Section -->
+    <section id="magic-lens" class="py-24 bg-white border-t border-b border-gold/20 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs uppercase tracking-widest text-gold font-bold">Signature Feature</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-burgundy mt-2 mb-4">Magic Lens Simulation</h2>
+                <p class="text-charcoal/70 text-sm">Experience the automated kinetic magnifying lens scanning cultural coordinates across Thrissur.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <h3 class="font-serif text-2xl font-bold text-burgundy">Look closer. Discover something unexpected.</h3>
+                    <p class="text-xs md:text-sm text-charcoal/70">
+                        Instead of manual dragging, Magic Lens automatically travels along smooth cinematic paths across historical zones, unlocking archival layers, timber blueprints, and oral histories.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="runLensDemo('surprise')" class="bg-burgundy hover:bg-burgundy-light text-ivory px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all shadow-md">
+                            Run Total Surprise Mode
+                        </button>
+                        <button onclick="runLensDemo('preferences')" class="bg-white border border-burgundy text-burgundy hover:bg-burgundy/5 px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all">
+                            Run My Preferences Mode
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative bg-ivory p-8 rounded-3xl border-2 border-gold/40 shadow-xl text-center min-h-[320px] flex flex-col items-center justify-center" data-aos="fade-left" id="lensSimulationBox">
+                    <div class="w-16 h-16 rounded-full bg-burgundy text-gold flex items-center justify-center mx-auto mb-4 border border-gold/40 animate-pulse-ring">
+                        <i data-lucide="sparkles" class="w-8 h-8"></i>
+                    </div>
+                    <span id="lensStatusTag" class="text-[10px] uppercase tracking-widest font-bold text-gold mb-1">Lens Ready</span>
+                    <h4 id="lensResultTitle" class="font-serif text-2xl font-bold text-burgundy mb-2">Vadakkumnathan Temple</h4>
+                    <p id="lensResultDesc" class="text-xs text-charcoal/70 max-w-sm mb-4">Click one of the buttons on the left to activate automated kinetic scanning across Thrissur coordinates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15 Cultural Discoveries Grid -->
+    <section id="discoveries" class="py-24 bg-ivory">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs uppercase tracking-widest text-gold font-bold">Verified Dataset</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-burgundy mt-2 mb-4">The 15 Thrissur Discoveries</h2>
+                <p class="text-charcoal/70 text-sm">Every entry is rigorously researched with exact localities, historical origins, and confidence ratings.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="discoveryGrid">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Mode Section -->
+    <section id="story-mode" class="py-24 bg-gradient-to-r from-burgundy to-burgundy-dark text-ivory relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+            <span class="text-xs uppercase tracking-widest text-gold font-bold">Immersive Storytelling</span>
+            <h2 class="font-serif text-4xl md:text-6xl font-bold mt-2 mb-6">Story Mode: Pulikali, Pooram & Architecture</h2>
+            <p class="max-w-2xl mx-auto text-sm md:text-base text-ivory/80 mb-10">
+                Dive deep into 60-90 second cinematic scene breakdowns, narration scripts, and historical backstories for Thrissur's premier cultural icons.
+            </p>
+            <button onclick="alert('Launching Story Mode viewer for Pulikali & Thrissur Pooram...')" class="bg-gold hover:bg-gold-light text-burgundy font-bold px-8 py-4 rounded-full text-sm uppercase tracking-wider transition-all shadow-xl">
+                Open Story Viewer
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-ivory/80 py-16 border-t border-gold/30">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-burgundy flex items-center justify-center text-gold border border-gold/40">
+                    <i data-lucide="flame" class="w-5 h-5"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-bold tracking-wider text-ivory">RIVA</span>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Living Culture Map</span>
+                </div>
+            </div>
+            <p class="text-xs text-ivory/65">
+                RIVA – The Living Culture Map (Thrissur District MVP). Built for hackathon excellence.
+            </p>
+            <div class="flex space-x-6 text-xs font-medium text-gold">
+                <a href="#" class="hover:underline">GitHub</a>
+                <a href="#" class="hover:underline">Documentation</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        lucide.createIcons();
+
+        // 15 Researched Dataset
+        const discoveries = [
+            { id: 1, name: "Vadakkumnathan Temple", category: "Heritage Space", locality: "Thekkinkadu Maidan, Thrissur", desc: "Ancient Shiva temple renowned for monumental timber roof architecture without iron nails.", story: "Interactive Story" },
+            { id: 2, name: "Shakthan Thampuran Palace", category: "Heritage Space", locality: "Ayyanthole, Thrissur", desc: "Historical palace of the Cochin royal family blending Kerala and Dutch styles.", story: "Visual Story" },
+            { id: 3, name: "District Heritage Museum", category: "Heritage Space", locality: "Chembukkavu, Thrissur", desc: "Museum housing megalithic relics, urn burials, and temple bronzes.", story: "Visual Story" },
+            { id: 4, name: "Punnathur Kotta (Anakkotta)", category: "Heritage Space", locality: "Guruvayur, Chavakkad", desc: "Royal palace grounds converted into a sanctuary housing temple elephants.", story: "Video Story" },
+            { id: 5, name: "Kerala Kalamandalam", category: "Heritage Space", locality: "Cheruthuruthy, Talappilly", desc: "Premier deemed university reviving Kathakali, Koodiyattam, and Mohiniyattam.", story: "Video Story" },
+            { id: 6, name: "Thrissur Pooram", category: "Festival", locality: "Thekkinkadu Maidan, Thrissur", desc: "The 'Mother of all Poorams' featuring 30 caparisoned elephants and Melam.", story: "Interactive Story" },
+            { id: 7, name: "Arattupuzha Pooram", category: "Festival", locality: "Arattupuzha Temple, Peruvanam", desc: "Ancient nocturnal congregation of over 50 divine effigies on elephants.", story: "Visual Story" },
+            { id: 8, name: "Kodungallur Bharani", category: "Festival", locality: "Kodungallur Bhagavathy Temple", desc: "Historic festival known for kavuthattu songs and egalitarian participation.", story: "Video Story" },
+            { id: 9, name: "Pulikali", category: "Art Form", locality: "Swaraj Round, Thrissur", desc: "Vibrant tiger-and-hunter street dance performed during Onam celebrations.", story: "Interactive Story (Story 1)" },
+            { id: 10, name: "Kummattikali", category: "Art Form", locality: "Palakkal, Thrissur", desc: "Masked folk dance featuring hand-carved wooden grinning faces and grass skirts.", story: "Visual Story" },
+            { id: 11, name: "Tholpavakoothu", category: "Craft", locality: "Koonathara, Palakkad-Thrissur border", desc: "Traditional shadow puppetry depicting Kamba Ramayana epics.", story: "Video Story" },
+            { id: 12, name: "Kalamezhuthu", category: "Art Form", locality: "Various Thrissur Temples", desc: "Ritual floor drawing using natural colored powders to depict deities.", story: "Visual Story" },
+            { id: 13, name: "Nadavaramba Bell-Metal Craft", category: "Craft", locality: "Nadavaramba, Irinjalakuda", desc: "Handcrafting bronze temple bells and lamps using traditional lost-wax casting.", story: "Video Story" },
+            { id: 14, name: "Cherpu Wooden Elephant Craft", category: "Craft", locality: "Cherpu, Thrissur", desc: "Miniature woodcarving specializing in realistic wooden elephant statues.", story: "Visual Story" },
+            { id: 15, name: "Pathramangalam Pottery", category: "Craft", locality: "Pathramangalam, Thandilam", desc: "Traditional terracotta pottery producing clay water pots and garden vessels.", story: "Visual Story" }
+        ];
+
+        function renderGrid(data) {
+            const grid = document.getElementById('discoveryGrid');
+            grid.innerHTML = data.map(item => `
+                <div class="discovery-card bg-white rounded-2xl border border-gold/30 p-6 shadow-md hover:shadow-xl transition-all">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="bg-burgundy/10 text-burgundy text-[10px] uppercase font-bold px-2.5 py-1 rounded-full">${item.category}</span>
+                        <span class="text-xs text-gold font-semibold">ID #${item.id < 10 ? '0' + item.id : item.id}</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-burgundy mb-2">${item.name}</h3>
+                    <p class="text-xs text-charcoal/60 mb-3 flex items-center"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold mr-1"></i>${item.locality}</p>
+                    <p class="text-xs text-charcoal/70 mb-4">${item.desc}</p>
+                    <div class="pt-3 border-t border-gold/20 flex justify-between items-center text-xs font-semibold text-burgundy">
+                        <span>Format: ${item.story}</span>
+                        <button onclick="alert('Viewing details for ${item.name}')" class="hover:text-gold transition-colors">Details &rarr;</button>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        renderGrid(discoveries);
+
+        function filterCategory(cat) {
+            if (cat === 'all') {
+                renderGrid(discoveries);
+            } else {
+                renderGrid(discoveries.filter(d => d.category === cat));
+            }
+        }
+
+        function liveSearch(query) {
+            const q = query.toLowerCase();
+            renderGrid(discoveries.filter(d => d.name.toLowerCase().includes(q) || d.locality.toLowerCase().includes(q) || d.desc.toLowerCase().includes(q)));
+        }
+
+        function triggerSearch() {
+            const q = document.getElementById('heroSearch').value;
+            liveSearch(q);
+            document.getElementById('discoveries').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Magic Lens Simulation
+        function runLensDemo(mode) {
+            const box = document.getElementById('lensSimulationBox');
+            const title = document.getElementById('lensResultTitle');
+            const desc = document.getElementById('lensResultDesc');
+            const tag = document.getElementById('lensStatusTag');
+
+            tag.innerText = "Scanning Coordinates...";
+            title.innerText = "Kinetic Lens Active...";
+            desc.innerText = "Tracing path across Thrissur map...";
+
+            setTimeout(() => {
+                const randomItem = discoveries[Math.floor(Math.random() * discoveries.length)];
+                tag.innerText = mode === 'surprise' ? "Total Surprise Unlocked" : "Preference Match Unlocked";
+                title.innerText = randomItem.name;
+                desc.innerText = `${randomItem.locality} — ${randomItem.desc} Recommended format: ${randomItem.story}`;
+            }, 800);
+        }
+    </script>
+</body>
+</html>
