@@ -8,6 +8,11 @@ RIVA – The Living Culture Map is a digital cultural heritage platform focused 
 
 The platform brings together information about cultural places, traditions, art forms, festivals, historical stories, and local knowledge. It aims to connect people with their cultural roots through an interactive digital experience and encourage communities to participate in heritage preservation.
 
+## 🌐 Live Demo
+
+- **Public Website:** [RIVA – The Living Culture Map](https://riva-living-culture-map.vercel.app/)
+- **Admin Dashboard:** [Admin Login](https://riva-living-culture-map.vercel.app/#admin)
+
 ## 2. Problem Statement
 
 Cultural heritage is often scattered across different sources, personal memories, local records, and community knowledge. Many traditions, stories, and lesser-known cultural places receive limited digital documentation and visibility.
